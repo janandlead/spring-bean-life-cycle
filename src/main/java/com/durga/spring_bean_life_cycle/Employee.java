@@ -42,4 +42,16 @@ public class Employee implements InitializingBean, DisposableBean, BeanNameAware
 	
 	}
 
+	@Override
+	public Object postProcessBeforeInitialization(Object bean, String beanName) {
+		System.out.println(">>> postProcessBeforeInitialization executed for bean: " + beanName + " <<<<<<");
+		return bean;
+	}
+
+	@Override
+	public Object postProcessAfterInitialization(Object bean, String beanName) {
+		System.out.println(">>> postProcessAfterInitialization executed for bean: " + beanName + " <<<<<<");
+		return bean;
+	}
+
 }
